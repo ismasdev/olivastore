@@ -1,12 +1,9 @@
-
+// 1. Inicializar Iconos y Fecha
 lucide.createIcons();
-
-
 document.getElementById('year').textContent = new Date().getFullYear();
 
-
+// 2. Configuración de GSAP
 gsap.registerPlugin(ScrollTrigger);
-
 
 const tl = gsap.timeline();
 
@@ -30,7 +27,7 @@ tl.fromTo('.hero-content > div',
     "-=0.4"
 );
 
-
+// Animaciones de Scroll
 gsap.fromTo('.section-header', 
     { opacity: 0, y: 30 },
     { 
@@ -60,7 +57,6 @@ gsap.fromTo('.category-card',
     }
 );
 
-
 gsap.fromTo('.about-text', 
     { opacity: 0, x: -40 },
     { 
@@ -88,3 +84,31 @@ gsap.fromTo('.about-visual',
         }
     }
 );
+
+// --- 3. Lógica del Menú Hamburguesa (Móvil) ---
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        
+        const icon = menuBtn.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            icon.setAttribute('data-lucide', 'menu');
+        } else {
+            icon.setAttribute('data-lucide', 'x');
+        }
+        lucide.createIcons();
+    });
+
+    // Cerrar al clickear un link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+            lucide.createIcons();
+        });
+    });
+}

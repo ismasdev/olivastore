@@ -56,21 +56,31 @@
     <div class="fixed bottom-[-20%] right-[-10%] w-[40%] h-[40%] bg-olive-900/20 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2 font-medium text-xl tracking-tight">
-<div class="flex items-center gap-3 font-medium text-xl tracking-tight">
-    <img src="logo.svg" alt="Oliva Store" class="w-8 h-8 object-contain">
-    Oliva Store
-</div>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">
-                <a href="#categorias" class="hover:text-white transition-colors duration-300">Categorías</a>
-                <a href="#nosotros" class="hover:text-white transition-colors duration-300">Sobre Nosotros</a>
-                <a href="https://wa.me/5493532418367" target="_blank" class="text-olive-400 hover:text-olive-500 transition-colors duration-300">Contacto</a>
-            </div>
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        
+        <div class="flex items-center gap-3 font-medium text-xl tracking-tight">
+            <img src="logo.svg" alt="Oliva Store" class="w-8 h-8 object-contain">
+            <span class="text-white">Oliva Store</span>
         </div>
-    </nav>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">
+            <a href="#categorias" class="hover:text-white transition-colors duration-300">Categorías</a>
+            <a href="#nosotros" class="hover:text-white transition-colors duration-300">Sobre Nosotros</a>
+            <a href="https://wa.me/5493532418367" target="_blank" class="text-olive-400 hover:text-olive-500 transition-colors duration-300 font-semibold">Contacto</a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-white p-2 focus:outline-none flex items-center justify-center">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-graphite-950/98 backdrop-blur-xl border-b border-white/10 w-full py-8 px-8 flex flex-col gap-6 text-lg font-medium shadow-2xl">
+        <a href="#categorias" class="text-white/90 hover:text-olive-400 transition-colors border-b border-white/5 pb-2">Categorías</a>
+        <a href="#nosotros" class="text-white/90 hover:text-olive-400 transition-colors border-b border-white/5 pb-2">Sobre Nosotros</a>
+        <a href="https://wa.me/5493532418367" target="_blank" class="text-olive-400 font-bold">Contacto Directo</a>
+    </div>
+</nav>
 
     <main class="relative z-10">
         <!-- Hero Section -->
@@ -225,7 +235,7 @@
         </div>
 
         <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-            <p>© 2026 Oliva Store. Todos los derechos reservados.</p>
+<p>© <span id="year"></span> Oliva Store. Todos los derechos reservados.</p>
             <div class="flex items-center gap-2">
                 <i data-lucide="map-pin" class="w-4 h-4"></i>
                 <span>Oliva, Córdoba, Argentina.</span>
@@ -234,6 +244,9 @@
     </div>
 </footer>
 
-    <script type="module" src="./main.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+    <script src="main.js"></script> </body>
+</html>
+</body>
 </body>
 </html>
